@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: java-hello-world
-          image: owalrohit03/java-hello-world:v1
+          image: owalrohit03/java-hello-world:v2
           ports:
             - containerPort: 8080
           readinessProbe:
