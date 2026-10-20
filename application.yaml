@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java-hello-world
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/rohitowal/demo-app-gitops.git
+    targetRevision: main
+    path: k8s
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
